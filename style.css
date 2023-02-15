@@ -328,6 +328,7 @@ header .icon {
   }
 
   .tentang .article .foto img {
-    width: 100%;
+    width: 300px;
+    margin: auto;
   }
 }
