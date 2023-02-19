@@ -74,7 +74,12 @@ header .icon {
   display: none;
 }
 
+.home {
+  position: relative;
+}
+
 .home aside {
+  position: relative;
   display: flex;
   align-items: center;
   background: url(images/buku.png) no-repeat;
@@ -134,11 +139,33 @@ header .icon {
 
 .tentang .article .foto {
   flex: 1 1 45rem;
+  overflow: hidden;
+}
+
+.tentang .article .foto .bg-foto1 {
+  background-color: #616793;
+  border-radius: 5%;
+  width: fit-content;
+  rotate: 20deg;
+  margin: auto;
+}
+
+.tentang .article .foto .bg-foto2 {
+  background-color: #6b719d;
+  border-radius: 5%;
+  width: fit-content;
+  rotate: -10deg;
 }
 
 .tentang .article .foto img {
+  background-color: #7379a5;
+  border-radius: 5%;
   display: block;
   margin: auto;
+  rotate: -10deg;
+  box-shadow: 0px 2px 20px #aaaaaa;
+  width: 100%;
+  object-fit: cover;
 }
 
 .tentang .article .deskripsi {
@@ -172,9 +199,10 @@ header .icon {
 }
 
 .kontak {
-  background: var(--warna-empat);
+  background: rgba(61, 67, 111);
   max-height: 45rem;
   padding: 10rem;
+  padding-bottom: 38rem;
 }
 
 .kontak aside {
@@ -191,14 +219,10 @@ header .icon {
   margin-bottom: 5rem;
 }
 
-.kontak aside hr {
-  width: 100%;
-  background-color: white;
-  height: 0.5rem;
-}
-
 .sosmed {
   display: flex;
+  padding: 0px 120px;
+  border-top: 4px solid white;
 }
 
 .sosmed a {
@@ -257,6 +281,83 @@ header .icon {
   color: white;
 }
 
+.box-circle {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  width: 500px;
+  height: 500px;
+  animation: putar 5s linear infinite;
+  /* background-color: red;
+  opacity: 50%;
+  border-radius: 100%; */
+}
+
+@keyframes putar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.circle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #7379a5;
+  border-radius: 100%;
+  margin: -25px;
+}
+
+.circle:nth-child(1) {
+  top: 0;
+  left: 50%;
+}
+
+.circle:nth-child(2) {
+  top: 80%;
+  left: 90%;
+}
+
+.circle:nth-child(3) {
+  top: 80%;
+  right: 90%;
+}
+
+.skills {
+  background: var(--warna-empat);
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 150px;
+}
+
+.title h1 {
+  color: white;
+  font-size: 75px;
+  margin: 50px auto;
+  text-align: center;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box .logo {
+  background-color: white;
+  border-radius: 50px;
+  padding: 20px;
+  margin: 0px 20px;
+}
+.box .logo img {
+  width: 20rem;
+}
+.box .logo:nth-child(2) img {
+  height: 30rem;
+  width: 25rem;
+}
+
 /* media queri */
 @media (max-width: 990px) {
   html {
@@ -268,6 +369,49 @@ header .icon {
 
   .home aside {
     padding: 2rem;
+  }
+
+  .tentang {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .tentang .article .foto .bg-foto1 {
+    scale: 0.8;
+    margin: auto;
+  }
+
+  .box-circle {
+    scale: 0.8;
+    top: 20%;
+    right: 1%;
+  }
+
+  .title h1 {
+    font-size: 6rem;
+  }
+
+  .box {
+    display: block;
+  }
+  .box .logo {
+    border-radius: 50px;
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 5rem;
+    width: 40rem;
+    height: 50rem;
+    overflow: hidden;
+  }
+  .box .logo img {
+    width: 100%;
+    margin: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+  .box .logo:nth-child(2) img {
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -320,6 +464,23 @@ header .icon {
   .tentang {
     padding: 0rem;
   }
+
+  .tentang .article .foto .bg-foto1 {
+    scale: 0.8;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: -20px;
+  }
+
+  .box-circle {
+    scale: 0.7;
+    top: 40%;
+    right: 10%;
+  }
+
+  .sosmed {
+    padding: 0 10px;
+  }
 }
 
 @media (max-width: 450px) {
@@ -327,8 +488,23 @@ header .icon {
     font-size: 50%;
   }
 
-  .tentang .article .foto img {
-    width: 300px;
+  .tentang .article .foto .bg-foto1 {
     margin: auto;
+    scale: 0.6;
+    margin-bottom: -60px;
+  }
+
+  .box-circle {
+    scale: 0.5;
+    top: 40%;
+    right: -10%;
+  }
+
+  .sosmed a {
+    margin: 5rem 2rem;
+  }
+
+  .kontak {
+    padding: 10rem 0;
   }
 }
